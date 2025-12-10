@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Smart Restaurant Admin</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body style="background: #f5f6fa;">
+  <div class="admin-layout">
+    <!-- Sidebar -->
+    <div class="admin-sidebar">
+      <div class="sidebar-logo">
+        <span style="font-size: 30px;">&#127860;</span>
+        <span>Smart Restaurant</span>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-link active">
+          <span class="nav-icon">&#128202;</span>
+          Dashboard
+        </a>
+        <a href="orders.html" class="nav-link">
+          <span class="nav-icon">&#128203;</span>
+          Orders
+          <span class="nav-badge">5</span>
+        </a>
+        <a href="menu.html" class="nav-link">
+          <span class="nav-icon">&#127860;</span>
+          Menu Items
+        </a>
+        <a href="categories.html" class="nav-link">
+          <span class="nav-icon">&#128193;</span>
+          Categories
+        </a>
+        <a href="tables.html" class="nav-link">
+          <span class="nav-icon">&#129689;</span>
+          Tables
+        </a>
+        <a href="staff.html" class="nav-link">
+          <span class="nav-icon">&#128101;</span>
+          Kitchen Staff
+        </a>
+        <a href="reports.html" class="nav-link">
+          <span class="nav-icon">&#128200;</span>
+          Reports
+        </a>
+        <a href="kds.html" class="nav-link">
+          <span class="nav-icon">&#128250;</span>
+          Kitchen Display
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="admin-profile">
+          <div class="admin-avatar">JD</div>
+          <div class="admin-info">
+            <div class="admin-name">John Doe</div>
+            <div class="admin-role">Restaurant Admin</div>
+          </div>
+        </div>
+        <a href="#" class="logout-link">&#128682; Logout</a>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="admin-main">
+      <!-- Header -->
+      <div class="admin-header">
+        <div>
+          <h1 class="page-title">Dashboard</h1>
+          <p class="page-subtitle">Welcome back! Here's what's happening today.</p>
+        </div>
+        <div style="display: flex; gap: 15px; align-items: center;">
+          <button class="btn-secondary">&#128250; Open KDS</button>
+          <button class="btn-primary">+ New Order</button>
+        </div>
+      </div>
+
+      <!-- Stats Cards -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon" style="background: #e8f8f5; color: #27ae60;">&#128176;</div>
+          <div class="stat-content">
+            <div class="stat-value">$2,458</div>
+            <div class="stat-label">Today's Revenue</div>
+            <div class="stat-change positive">&#8593; 12% from yesterday</div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon" style="background: #ebf5fb; color: #3498db;">&#128230;</div>
+          <div class="stat-content">
+            <div class="stat-value">48</div>
+            <div class="stat-label">Orders Today</div>
+            <div class="stat-change positive">&#8593; 8% from yesterday</div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon" style="background: #fef9e7; color: #f39c12;">&#129689;</div>
+          <div class="stat-content">
+            <div class="stat-value">12/20</div>
+            <div class="stat-label">Tables Occupied</div>
+            <div class="stat-change">60% occupancy</div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon" style="background: #fdedec; color: #e74c3c;">&#9203;</div>
+          <div class="stat-content">
+            <div class="stat-value">18 min</div>
+            <div class="stat-label">Avg. Prep Time</div>
+            <div class="stat-change negative">&#8593; 2 min from target</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Charts Row -->
+      <div class="charts-row">
+        <!-- Revenue Chart -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <h3>Revenue This Week</h3>
+            <select class="chart-filter">
+              <option>This Week</option>
+              <option>Last Week</option>
+              <option>This Month</option>
+            </select>
+          </div>
+          <div class="chart-placeholder">
+            <div class="bar-chart">
+              <div class="bar" style="height: 60%"><span>Mon</span></div>
+              <div class="bar" style="height: 75%"><span>Tue</span></div>
+              <div class="bar" style="height: 45%"><span>Wed</span></div>
+              <div class="bar" style="height: 90%"><span>Thu</span></div>
+              <div class="bar" style="height: 85%"><span>Fri</span></div>
+              <div class="bar active" style="height: 100%"><span>Sat</span></div>
+              <div class="bar" style="height: 70%"><span>Sun</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Popular Items -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <h3>Top Selling Items</h3>
+            <a href="#" class="view-all">View All</a>
+          </div>
+          <div class="top-items">
+            <div class="top-item">
+              <span class="top-rank">1</span>
+              <span class="top-icon">&#127860;</span>
+              <div class="top-info">
+                <div class="top-name">Grilled Salmon</div>
+                <div class="top-stats">124 orders | $2,232</div>
+              </div>
+            </div>
+            <div class="top-item">
+              <span class="top-rank">2</span>
+              <span class="top-icon">&#127837;</span>
+              <div class="top-info">
+                <div class="top-name">Pasta Carbonara</div>
+                <div class="top-stats">98 orders | $1,470</div>
+              </div>
+            </div>
+            <div class="top-item">
+              <span class="top-rank">3</span>
+              <span class="top-icon">&#129385;</span>
+              <div class="top-info">
+                <div class="top-name">Beef Steak</div>
+                <div class="top-stats">76 orders | $1,900</div>
+              </div>
+            </div>
+            <div class="top-item">
+              <span class="top-rank">4</span>
+              <span class="top-icon">&#129367;</span>
+              <div class="top-info">
+                <div class="top-name">Caesar Salad</div>
+                <div class="top-stats">65 orders | $780</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Orders -->
+      <div class="table-card">
+        <div class="table-header">
+          <h3>Recent Orders</h3>
+          <a href="orders.html" class="view-all">View All Orders &#8594;</a>
+        </div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Table</th>
+              <th>Items</th>
+              <th>Total</th>
+              <th>Status</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#ORD-0048</td>
+              <td>Table 5</td>
+              <td>3 items</td>
+              <td>$67.50</td>
+              <td><span class="status-badge preparing">Preparing</span></td>
+              <td>2 min ago</td>
+            </tr>
+            <tr>
+              <td>#ORD-0047</td>
+              <td>Table 12</td>
+              <td>5 items</td>
+              <td>$124.00</td>
+              <td><span class="status-badge preparing">Preparing</span></td>
+              <td>8 min ago</td>
+            </tr>
+            <tr>
+              <td>#ORD-0046</td>
+              <td>Table 3</td>
+              <td>2 items</td>
+              <td>$45.00</td>
+              <td><span class="status-badge ready">Ready</span></td>
+              <td>15 min ago</td>
+            </tr>
+            <tr>
+              <td>#ORD-0045</td>
+              <td>Table 8</td>
+              <td>4 items</td>
+              <td>$89.00</td>
+              <td><span class="status-badge completed">Completed</span></td>
+              <td>25 min ago</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

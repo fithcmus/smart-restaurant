@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Management - Smart Restaurant Admin</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body style="background: #f5f6fa;">
+  <div class="admin-layout">
+    <!-- Sidebar -->
+    <div class="admin-sidebar">
+      <div class="sidebar-logo">
+        <span style="font-size: 30px;">&#127860;</span>
+        <span>Smart Restaurant</span>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-link">
+          <span class="nav-icon">&#128202;</span>
+          Dashboard
+        </a>
+        <a href="orders.html" class="nav-link">
+          <span class="nav-icon">&#128203;</span>
+          Orders
+          <span class="nav-badge">5</span>
+        </a>
+        <a href="menu.html" class="nav-link active">
+          <span class="nav-icon">&#127860;</span>
+          Menu Items
+        </a>
+        <a href="categories.html" class="nav-link">
+          <span class="nav-icon">&#128193;</span>
+          Categories
+        </a>
+        <a href="tables.html" class="nav-link">
+          <span class="nav-icon">&#129689;</span>
+          Tables
+        </a>
+        <a href="staff.html" class="nav-link">
+          <span class="nav-icon">&#128101;</span>
+          Kitchen Staff
+        </a>
+        <a href="reports.html" class="nav-link">
+          <span class="nav-icon">&#128200;</span>
+          Reports
+        </a>
+        <a href="kds.html" class="nav-link">
+          <span class="nav-icon">&#128250;</span>
+          Kitchen Display
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="admin-profile">
+          <div class="admin-avatar">JD</div>
+          <div class="admin-info">
+            <div class="admin-name">John Doe</div>
+            <div class="admin-role">Restaurant Admin</div>
+          </div>
+        </div>
+        <a href="#" class="logout-link">&#128682; Logout</a>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="admin-main">
+      <!-- Header -->
+      <div class="admin-header">
+        <div>
+          <h1 class="page-title">Menu Items</h1>
+          <p class="page-subtitle">Manage your restaurant's menu items</p>
+        </div>
+        <button class="btn-primary">+ Add Menu Item</button>
+      </div>
+
+      <!-- Filters -->
+      <div class="filters-bar">
+        <div class="search-box">
+          <span>&#128269;</span>
+          <input type="text" placeholder="Search menu items...">
+        </div>
+        <select class="filter-select">
+          <option>All Categories</option>
+          <option>Appetizers</option>
+          <option>Main Dishes</option>
+          <option>Drinks</option>
+          <option>Desserts</option>
+        </select>
+        <select class="filter-select">
+          <option>All Status</option>
+          <option>Available</option>
+          <option>Unavailable</option>
+          <option>Sold Out</option>
+        </select>
+        <select class="filter-select">
+          <option>Sort by: Newest</option>
+          <option>Sort by: Price (Low)</option>
+          <option>Sort by: Price (High)</option>
+          <option>Sort by: Popular</option>
+        </select>
+      </div>
+
+      <!-- Menu Items Grid -->
+      <div class="menu-grid">
+        <!-- Item 1 -->
+        <div class="menu-admin-card">
+          <div class="menu-card-image">&#127860;</div>
+          <div class="menu-card-body">
+            <div class="menu-card-header">
+              <h4>Grilled Salmon</h4>
+              <span class="status-dot available"></span>
+            </div>
+            <p class="menu-card-category">Main Dishes</p>
+            <p class="menu-card-desc">Fresh Atlantic salmon grilled to perfection...</p>
+            <div class="menu-card-meta">
+              <span class="menu-card-price">$18.00</span>
+              <span class="menu-card-prep">&#9202; 15 min</span>
+            </div>
+            <div class="menu-card-stats">
+              <span>&#9733; 4.2 (24)</span>
+              <span>124 orders</span>
+            </div>
+            <div class="menu-card-actions">
+              <button class="btn-icon" title="Edit">&#9998;</button>
+              <button class="btn-icon" title="Duplicate">&#128464;</button>
+              <button class="btn-icon danger" title="Delete">&#128465;</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="menu-admin-card">
+          <div class="menu-card-image">&#129367;</div>
+          <div class="menu-card-body">
+            <div class="menu-card-header">
+              <h4>Caesar Salad</h4>
+              <span class="status-dot available"></span>
+            </div>
+            <p class="menu-card-category">Appetizers</p>
+            <p class="menu-card-desc">Crisp romaine lettuce with parmesan...</p>
+            <div class="menu-card-meta">
+              <span class="menu-card-price">$12.00</span>
+              <span class="menu-card-prep">&#9202; 8 min</span>
+            </div>
+            <div class="menu-card-stats">
+              <span>&#9733; 4.8 (18)</span>
+              <span>65 orders</span>
+            </div>
+            <div class="menu-card-actions">
+              <button class="btn-icon" title="Edit">&#9998;</button>
+              <button class="btn-icon" title="Duplicate">&#128464;</button>
+              <button class="btn-icon danger" title="Delete">&#128465;</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="menu-admin-card">
+          <div class="menu-card-image">&#129385;</div>
+          <div class="menu-card-body">
+            <div class="menu-card-header">
+              <h4>Beef Steak</h4>
+              <span class="status-dot sold-out"></span>
+            </div>
+            <p class="menu-card-category">Main Dishes</p>
+            <p class="menu-card-desc">Premium cut beef steak cooked to your liking...</p>
+            <div class="menu-card-meta">
+              <span class="menu-card-price">$25.00</span>
+              <span class="menu-card-prep">&#9202; 20 min</span>
+            </div>
+            <div class="menu-card-stats">
+              <span>&#9733; 4.5 (32)</span>
+              <span>76 orders</span>
+            </div>
+            <div class="menu-card-actions">
+              <button class="btn-icon" title="Edit">&#9998;</button>
+              <button class="btn-icon" title="Duplicate">&#128464;</button>
+              <button class="btn-icon danger" title="Delete">&#128465;</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="menu-admin-card">
+          <div class="menu-card-image">&#127837;</div>
+          <div class="menu-card-body">
+            <div class="menu-card-header">
+              <h4>Pasta Carbonara</h4>
+              <span class="status-dot available"></span>
+            </div>
+            <p class="menu-card-category">Main Dishes</p>
+            <p class="menu-card-desc">Classic Italian pasta with creamy sauce...</p>
+            <div class="menu-card-meta">
+              <span class="menu-card-price">$15.00</span>
+              <span class="menu-card-prep">&#9202; 12 min</span>
+            </div>
+            <div class="menu-card-stats">
+              <span>&#9733; 4.9 (45)</span>
+              <span>98 orders</span>
+            </div>
+            <div class="menu-card-actions">
+              <button class="btn-icon" title="Edit">&#9998;</button>
+              <button class="btn-icon" title="Duplicate">&#128464;</button>
+              <button class="btn-icon danger" title="Delete">&#128465;</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="menu-admin-card">
+          <div class="menu-card-image">&#129379;</div>
+          <div class="menu-card-body">
+            <div class="menu-card-header">
+              <h4>Mushroom Soup</h4>
+              <span class="status-dot available"></span>
+            </div>
+            <p class="menu-card-category">Appetizers</p>
+            <p class="menu-card-desc">Creamy mushroom soup with herbs...</p>
+            <div class="menu-card-meta">
+              <span class="menu-card-price">$8.00</span>
+              <span class="menu-card-prep">&#9202; 10 min</span>
+            </div>
+            <div class="menu-card-stats">
+              <span>&#9733; 4.3 (15)</span>
+              <span>42 orders</span>
+            </div>
+            <div class="menu-card-actions">
+              <button class="btn-icon" title="Edit">&#9998;</button>
+              <button class="btn-icon" title="Duplicate">&#128464;</button>
+              <button class="btn-icon danger" title="Delete">&#128465;</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="menu-admin-card">
+          <div class="menu-card-image">&#127864;</div>
+          <div class="menu-card-body">
+            <div class="menu-card-header">
+              <h4>Red Wine</h4>
+              <span class="status-dot available"></span>
+            </div>
+            <p class="menu-card-category">Drinks</p>
+            <p class="menu-card-desc">Premium house red wine selection...</p>
+            <div class="menu-card-meta">
+              <span class="menu-card-price">$8.00</span>
+              <span class="menu-card-prep">&#9202; 2 min</span>
+            </div>
+            <div class="menu-card-stats">
+              <span>&#9733; 4.6 (28)</span>
+              <span>156 orders</span>
+            </div>
+            <div class="menu-card-actions">
+              <button class="btn-icon" title="Edit">&#9998;</button>
+              <button class="btn-icon" title="Duplicate">&#128464;</button>
+              <button class="btn-icon danger" title="Delete">&#128465;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pagination -->
+      <div class="pagination">
+        <button class="page-btn" disabled>&#8592; Previous</button>
+        <span class="page-info">Page 1 of 5</span>
+        <button class="page-btn">Next &#8594;</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

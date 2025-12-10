@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kitchen Display System - Smart Restaurant</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #1a1a2e;
+      color: white;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    .kds-container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .kds-header {
+      background: #16213e;
+      padding: 15px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #e74c3c;
+    }
+
+    .kds-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .kds-stats {
+      display: flex;
+      gap: 30px;
+    }
+
+    .kds-stat {
+      text-align: center;
+    }
+
+    .kds-stat-value {
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    .kds-stat-label {
+      font-size: 12px;
+      color: #7f8c8d;
+      text-transform: uppercase;
+    }
+
+    .kds-stat-value.warning { color: #f39c12; }
+    .kds-stat-value.danger { color: #e74c3c; }
+    .kds-stat-value.success { color: #27ae60; }
+
+    .kds-time {
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .kds-controls {
+      display: flex;
+      gap: 10px;
+    }
+
+    .kds-btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .kds-btn-primary {
+      background: #e74c3c;
+      color: white;
+    }
+
+    .kds-btn-secondary {
+      background: #34495e;
+      color: white;
+    }
+
+    .kds-columns {
+      display: flex;
+      flex: 1;
+      gap: 20px;
+      padding: 20px;
+      overflow-x: auto;
+    }
+
+    .kds-column {
+      flex: 1;
+      min-width: 320px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .kds-column-header {
+      padding: 15px;
+      border-radius: 12px 12px 0 0;
+      font-weight: 700;
+      font-size: 16px;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .kds-column-header.received { background: #f39c12; }
+    .kds-column-header.preparing { background: #3498db; }
+    .kds-column-header.ready { background: #27ae60; }
+
+    .kds-column-count {
+      background: rgba(0,0,0,0.2);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 14px;
+    }
+
+    .kds-column-body {
+      background: #16213e;
+      flex: 1;
+      border-radius: 0 0 12px 12px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-height: calc(100vh - 200px);
+      overflow-y: auto;
+    }
+
+    .kds-order {
+      background: #1a1a2e;
+      border-radius: 12px;
+      border-left: 4px solid #3498db;
+      overflow: hidden;
+    }
+
+    .kds-order.urgent {
+      border-left-color: #e74c3c;
+      animation: pulse-border 1s infinite;
+    }
+
+    @keyframes pulse-border {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.4); }
+      50% { box-shadow: 0 0 0 8px rgba(231, 76, 60, 0); }
+    }
+
+    .kds-order-header {
+      padding: 12px 15px;
+      background: rgba(255,255,255,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .kds-order-id {
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .kds-order-table {
+      background: #e74c3c;
+      padding: 4px 12px;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    .kds-order-timer {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 14px;
+      color: #7f8c8d;
+    }
+
+    .kds-order-timer.warning { color: #f39c12; }
+    .kds-order-timer.danger { color: #e74c3c; font-weight: 700; }
+
+    .kds-order-items {
+      padding: 15px;
+    }
+
+    .kds-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .kds-item:last-child {
+      border-bottom: none;
+    }
+
+    .kds-item-qty {
+      background: #e74c3c;
+      color: white;
+      width: 30px;
+      height: 30px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .kds-item-details {
+      flex: 1;
+    }
+
+    .kds-item-name {
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .kds-item-mods {
+      color: #f39c12;
+      font-size: 13px;
+      margin-top: 3px;
+    }
+
+    .kds-item-notes {
+      color: #9b59b6;
+      font-size: 13px;
+      margin-top: 3px;
+      font-style: italic;
+    }
+
+    .kds-item-status {
+      font-size: 20px;
+    }
+
+    .kds-order-footer {
+      padding: 12px 15px;
+      background: rgba(255,255,255,0.05);
+      display: flex;
+      gap: 10px;
+    }
+
+    .kds-order-btn {
+      flex: 1;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .kds-order-btn.accept {
+      background: #27ae60;
+      color: white;
+    }
+
+    .kds-order-btn.ready {
+      background: #27ae60;
+      color: white;
+    }
+
+    .kds-order-btn.bump {
+      background: #3498db;
+      color: white;
+    }
+
+    .kds-order-btn.recall {
+      background: #34495e;
+      color: white;
+    }
+
+    /* Sound indicator */
+    .sound-indicator {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 15px;
+      background: #27ae60;
+      border-radius: 20px;
+      font-size: 13px;
+    }
+
+    .sound-waves {
+      display: flex;
+      gap: 2px;
+      align-items: flex-end;
+    }
+
+    .sound-wave {
+      width: 3px;
+      background: white;
+      border-radius: 2px;
+      animation: wave 0.5s ease-in-out infinite;
+    }
+
+    .sound-wave:nth-child(1) { height: 8px; animation-delay: 0s; }
+    .sound-wave:nth-child(2) { height: 14px; animation-delay: 0.1s; }
+    .sound-wave:nth-child(3) { height: 10px; animation-delay: 0.2s; }
+    .sound-wave:nth-child(4) { height: 16px; animation-delay: 0.3s; }
+
+    @keyframes wave {
+      0%, 100% { transform: scaleY(1); }
+      50% { transform: scaleY(0.5); }
+    }
+  </style>
+</head>
+<body>
+  <div class="kds-container">
+    <!-- Header -->
+    <div class="kds-header">
+      <div class="kds-logo">
+        <span style="font-size: 30px;">&#127860;</span>
+        <span>Kitchen Display</span>
+      </div>
+
+      <div class="kds-stats">
+        <div class="kds-stat">
+          <div class="kds-stat-value warning">3</div>
+          <div class="kds-stat-label">Pending</div>
+        </div>
+        <div class="kds-stat">
+          <div class="kds-stat-value">5</div>
+          <div class="kds-stat-label">Cooking</div>
+        </div>
+        <div class="kds-stat">
+          <div class="kds-stat-value success">2</div>
+          <div class="kds-stat-label">Ready</div>
+        </div>
+        <div class="kds-stat">
+          <div class="kds-stat-value danger">1</div>
+          <div class="kds-stat-label">Overdue</div>
+        </div>
+      </div>
+
+      <div class="kds-time">14:32:45</div>
+
+      <div class="kds-controls">
+        <div class="sound-indicator">
+          <div class="sound-waves">
+            <div class="sound-wave"></div>
+            <div class="sound-wave"></div>
+            <div class="sound-wave"></div>
+            <div class="sound-wave"></div>
+          </div>
+          Sound ON
+        </div>
+        <button class="kds-btn kds-btn-secondary">&#9881; Settings</button>
+        <button class="kds-btn kds-btn-secondary">&#128682; Exit</button>
+      </div>
+    </div>
+
+    <!-- Columns -->
+    <div class="kds-columns">
+      <!-- Received Column -->
+      <div class="kds-column">
+        <div class="kds-column-header received">
+          &#128276; Received
+          <span class="kds-column-count">3</span>
+        </div>
+        <div class="kds-column-body">
+          <!-- New Order -->
+          <div class="kds-order">
+            <div class="kds-order-header">
+              <span class="kds-order-id">#051</span>
+              <span class="kds-order-table">Table 8</span>
+            </div>
+            <div style="padding: 8px 15px; background: #f39c12; color: #1a1a2e; font-weight: 600; font-size: 13px;">
+              &#128276; NEW ORDER - Just now
+            </div>
+            <div class="kds-order-items">
+              <div class="kds-item">
+                <span class="kds-item-qty">1</span>
+                <div class="kds-item-details">
+                  <div class="kds-item-name">Grilled Salmon</div>
+                  <div class="kds-item-mods">+ Large, + Side salad</div>
+                </div>
+              </div>
+              <div class="kds-item">
+                <span class="kds-item-qty">2</span>
+                <div class="kds-item-details">
+                  <div class="kds-item-name">Caesar Salad</div>
+                </div>
+              </div>
+              <div class="kds-item">
+                <span class="kds-item-qty">1</span>
+                <div class="kds-item-details">
+                  <div class="kds-item-name">Mushroom Soup</div>
+                  <div class="kds-item-notes">&#9998; Extra hot</div>
+                </div>
+              </div>
+            </div>
+            <div class="kds-order-footer">
+              <button class="kds-order-btn accept">&#10003; Accept & Start</button>
+            </div>
+          </div>
+
+          <!-- Order 2 -->
+          <div class="kds-order">
+            <div class="kds-order-header">
+              <span class="kds-order-id">#050</span>
+              <span class="kds-order-table">Table 3</span>
+            </div>
+            <div class="kds-order-items">
+              <div class="kds-item">
+                <span class="kds-item-qty">2</span>
+                <div class="kds-item-details">
+                  <div class="kds-item-name">Pasta Carbonara</div>
+                </div>
+              </div>
+            </div>
+            <div class="kds-order-footer">
+              <button class="kds-order-btn accept">&#10003; Accept & Start</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Preparing Column -->
+      <div class="kds-column">
+        <div class="kds-column-header preparing">
+          &#128293; Preparing
+          <span class="kds-column-count">5</span>
+        </div>
+        <div class="kds-column-body">
+          <!-- Urgent Order -->
+          <div class="kds-order urgent">
+            <div class="kds-order-header">
+              <span class="kds-order-id">#045</span>
+              <span class="kds-order-table">Table 12</span>
+            </div>
+            <div style="padding: 8px 15px; background: #e74c3c; font-weight: 600; font-size: 13px;">
+              &#9888; OVERDUE - Target: 15 min
+            </div>
+            <div class="kds-order-items">
+              <div class="kds-order-timer danger">&#9202; 22:45</div>
+              <div class="kds-item">
+                <span class="kds-item-qty">2</span>
+                <div class="kds-item-details">
+                  <div class="kds-item-name">Beef Steak</div>
+                  <div class="kds-item-mods">+ Medium rare</div>
+                </div>
+                <span class="kds-item-status">&#128293;</span>
+              </div>
+              <div class="kds-item">
+                <span class="kds-item-qty">2</span>
+                <div class="kds-item-details">
+                  <div class="kds-item-name">Grilled Vegetables</div>
+                </div>
+                <span class="kds-item-status">&#9989;</span>
+              </div>
+            </div>
+            <div class="kds-order-footer">
+              <button class="kds-order-btn ready">&#10003; Mark Ready</button>
+            </div>
+          </div>
+
+          <!-- Normal Order -->
+          <div class="kds-order">
+            <div class="kds-order-header">
+              <span class="kds-order-id">#049</span>
+              <span class="kds-order-table">Table 5</span>
+            </div>
+            <div class="kds-order-items">
+              <div class="kds-order-timer">&#9202; 5:30</div>
+              <div class="kds-item">
+                <span class="kds-item-qty">1</span>
+                <div class="kds-item-details">
+                  <div class="kds-item-name">Pasta Carbonara</div>
+                </div>
+                <span class="kds-item-status">&#128293;</span>
+              </div>
+              <div class="kds-item">
+                <span class="kds-item-qty">2</span>
+                <div class="kds-item-details">
+                  <div class="kds-item-name">Mushroom Soup</div>
+                </div>
+                <span class="kds-item-status">&#9203;</span>
+              </div>
+            </div>
+            <div class="kds-order-footer">
+              <button class="kds-order-btn ready">&#10003; Mark Ready</button>
+            </div>
+          </div>
+
+          <!-- Another Order -->
+          <div class="kds-order">
+            <div class="kds-order-header">
+              <span class="kds-order-id">#048</span>
+              <span class="kds-order-table">Table 1</span>
+            </div>
+            <div class="kds-order-items">
+              <div class="kds-order-timer warning">&#9202; 12:15</div>
+              <div class="kds-item">
+                <span class="kds-item-qty">1</span>
+                <div class="kds-item-details">
+                  <div class="kds-item-name">Grilled Salmon</div>
+                  <div class="kds-item-mods">+ Large</div>
+                  <div class="kds-item-notes">&#9998; No onions</div>
+                </div>
+                <span class="kds-item-status">&#128293;</span>
+              </div>
+            </div>
+            <div class="kds-order-footer">
+              <button class="kds-order-btn ready">&#10003; Mark Ready</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ready Column -->
+      <div class="kds-column">
+        <div class="kds-column-header ready">
+          &#9989; Ready
+          <span class="kds-column-count">2</span>
+        </div>
+        <div class="kds-column-body">
+          <div class="kds-order">
+            <div class="kds-order-header">
+              <span class="kds-order-id">#047</span>
+              <span class="kds-order-table">Table 1</span>
+            </div>
+            <div class="kds-order-items">
+              <div class="kds-order-timer" style="color: #27ae60;">&#9989; Ready 2 min ago</div>
+              <div class="kds-item">
+                <span class="kds-item-qty">1</span>
+                <div class="kds-item-details">
+                  <div class="kds-item-name">Caesar Salad</div>
+                </div>
+                <span class="kds-item-status">&#9989;</span>
+              </div>
+            </div>
+            <div class="kds-order-footer">
+              <button class="kds-order-btn bump">&#128077; Bump</button>
+              <button class="kds-order-btn recall">Recall</button>
+            </div>
+          </div>
+
+          <div class="kds-order">
+            <div class="kds-order-header">
+              <span class="kds-order-id">#046</span>
+              <span class="kds-order-table">Table 5</span>
+            </div>
+            <div class="kds-order-items">
+              <div class="kds-order-timer" style="color: #27ae60;">&#9989; Ready 5 min ago</div>
+              <div class="kds-item">
+                <span class="kds-item-qty">2</span>
+                <div class="kds-item-details">
+                  <div class="kds-item-name">Grilled Salmon (Large)</div>
+                  <div class="kds-item-mods">+ Side salad</div>
+                </div>
+                <span class="kds-item-status">&#9989;</span>
+              </div>
+              <div class="kds-item">
+                <span class="kds-item-qty">1</span>
+                <div class="kds-item-details">
+                  <div class="kds-item-name">Caesar Salad</div>
+                </div>
+                <span class="kds-item-status">&#9989;</span>
+              </div>
+              <div class="kds-item">
+                <span class="kds-item-qty">2</span>
+                <div class="kds-item-details">
+                  <div class="kds-item-name">Red Wine (Glass)</div>
+                </div>
+                <span class="kds-item-status">&#9989;</span>
+              </div>
+            </div>
+            <div class="kds-order-footer">
+              <button class="kds-order-btn bump">&#128077; Bump</button>
+              <button class="kds-order-btn recall">Recall</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

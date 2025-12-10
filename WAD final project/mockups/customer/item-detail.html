@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Item Detail - Smart Restaurant</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-container">
+    <!-- Header -->
+    <div class="header">
+      <button class="header-back">&#8592;</button>
+      <span class="header-title">Item Details</span>
+      <span class="header-table">Table 5</span>
+    </div>
+
+    <!-- Hero Image -->
+    <div class="item-hero">&#127860;</div>
+
+    <!-- Item Content -->
+    <div class="item-content" style="padding-bottom: 120px;">
+      <div class="item-header">
+        <div class="item-title">Grilled Salmon</div>
+        <div class="item-price">$18.00</div>
+      </div>
+
+      <div class="menu-item-rating" style="margin-bottom: 10px;">
+        &#9733;&#9733;&#9733;&#9733;&#9734; (24 reviews)
+      </div>
+
+      <div class="item-meta">
+        <span>&#9202; ~15 min</span>
+        <span>&#127860; Fish, Dairy</span>
+        <span class="menu-item-status available">&#9679; Available</span>
+      </div>
+
+      <p class="item-description">
+        Fresh Atlantic salmon grilled to perfection, served with seasonal vegetables and a zesty lemon butter sauce. A healthy and delicious choice for seafood lovers.
+      </p>
+
+      <!-- Modifiers -->
+      <div class="modifier-section">
+        <div class="modifier-title">Size</div>
+        <div class="modifier-option">
+          <label class="modifier-label">
+            <input type="radio" name="size" checked> Regular
+          </label>
+          <span class="modifier-price">+$0.00</span>
+        </div>
+        <div class="modifier-option">
+          <label class="modifier-label">
+            <input type="radio" name="size"> Large
+          </label>
+          <span class="modifier-price">+$5.00</span>
+        </div>
+      </div>
+
+      <div class="modifier-section">
+        <div class="modifier-title">Extras</div>
+        <div class="modifier-option">
+          <label class="modifier-label">
+            <input type="checkbox"> Extra sauce
+          </label>
+          <span class="modifier-price">+$2.00</span>
+        </div>
+        <div class="modifier-option">
+          <label class="modifier-label">
+            <input type="checkbox" checked> Side salad
+          </label>
+          <span class="modifier-price">+$4.00</span>
+        </div>
+        <div class="modifier-option">
+          <label class="modifier-label">
+            <input type="checkbox"> Grilled vegetables
+          </label>
+          <span class="modifier-price">+$3.00</span>
+        </div>
+      </div>
+
+      <!-- Special Instructions -->
+      <div class="modifier-section">
+        <div class="modifier-title">Special Instructions</div>
+        <textarea class="special-instructions" placeholder="Any special requests? (e.g., no onions, extra spicy...)">No onions please</textarea>
+      </div>
+
+      <!-- Related Items -->
+      <div class="modifier-section">
+        <div class="modifier-title">You might also like</div>
+        <div style="display: flex; gap: 10px; overflow-x: auto; padding: 10px 0;">
+          <div style="min-width: 120px; text-align: center; padding: 15px; background: #f5f6fa; border-radius: 12px;">
+            <div style="font-size: 40px;">&#129438;</div>
+            <div style="font-size: 14px; margin-top: 5px;">Lobster</div>
+            <div style="color: #e74c3c; font-weight: 600;">$28</div>
+          </div>
+          <div style="min-width: 120px; text-align: center; padding: 15px; background: #f5f6fa; border-radius: 12px;">
+            <div style="font-size: 40px;">&#129424;</div>
+            <div style="font-size: 14px; margin-top: 5px;">Shrimp</div>
+            <div style="color: #e74c3c; font-weight: 600;">$16</div>
+          </div>
+          <div style="min-width: 120px; text-align: center; padding: 15px; background: #f5f6fa; border-radius: 12px;">
+            <div style="font-size: 40px;">&#129379;</div>
+            <div style="font-size: 14px; margin-top: 5px;">Fish Soup</div>
+            <div style="color: #e74c3c; font-weight: 600;">$10</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reviews -->
+      <div class="modifier-section">
+        <div class="modifier-title">Reviews (24)</div>
+        <div style="padding: 15px; background: #f5f6fa; border-radius: 12px; margin-bottom: 10px;">
+          <div style="display: flex; justify-content: space-between;">
+            <strong>John D.</strong>
+            <span style="color: #f39c12;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          </div>
+          <p style="color: #7f8c8d; margin-top: 5px; font-size: 14px;">"Amazing salmon! Perfectly cooked and the sauce was incredible."</p>
+        </div>
+        <div style="padding: 15px; background: #f5f6fa; border-radius: 12px;">
+          <div style="display: flex; justify-content: space-between;">
+            <strong>Sarah M.</strong>
+            <span style="color: #f39c12;">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+          </div>
+          <p style="color: #7f8c8d; margin-top: 5px; font-size: 14px;">"Good quality but a bit pricey. Would recommend though!"</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add to Cart Bar -->
+    <div class="add-to-cart-bar">
+      <div class="quantity-control">
+        <button class="qty-btn">-</button>
+        <span class="qty-value">2</span>
+        <button class="qty-btn">+</button>
+      </div>
+      <button class="add-to-cart-btn">Add to Cart - $54.00</button>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart - Smart Restaurant</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-container">
+    <!-- Header -->
+    <div class="header">
+      <button class="header-back">&#8592;</button>
+      <span class="header-title">Your Cart</span>
+      <span class="header-table">Table 5</span>
+    </div>
+
+    <!-- Cart Content -->
+    <div class="content" style="padding-bottom: 180px;">
+      <!-- Cart Items -->
+      <div class="cart-item">
+        <div class="cart-item-image">&#127860;</div>
+        <div class="cart-item-info">
+          <div class="cart-item-name">Grilled Salmon</div>
+          <div class="cart-item-modifiers">Large, Side salad</div>
+          <div class="cart-item-note">No onions please</div>
+          <div class="cart-item-price">$27.00</div>
+        </div>
+        <div class="cart-item-actions">
+          <div class="quantity-control small">
+            <button class="qty-btn">-</button>
+            <span class="qty-value">2</span>
+            <button class="qty-btn">+</button>
+          </div>
+          <button class="remove-btn">&#128465;</button>
+        </div>
+      </div>
+
+      <div class="cart-item">
+        <div class="cart-item-image">&#129367;</div>
+        <div class="cart-item-info">
+          <div class="cart-item-name">Caesar Salad</div>
+          <div class="cart-item-modifiers">Regular</div>
+          <div class="cart-item-price">$12.00</div>
+        </div>
+        <div class="cart-item-actions">
+          <div class="quantity-control small">
+            <button class="qty-btn">-</button>
+            <span class="qty-value">1</span>
+            <button class="qty-btn">+</button>
+          </div>
+          <button class="remove-btn">&#128465;</button>
+        </div>
+      </div>
+
+      <div class="cart-item">
+        <div class="cart-item-image">&#127864;</div>
+        <div class="cart-item-info">
+          <div class="cart-item-name">Red Wine</div>
+          <div class="cart-item-modifiers">Glass</div>
+          <div class="cart-item-price">$8.00</div>
+        </div>
+        <div class="cart-item-actions">
+          <div class="quantity-control small">
+            <button class="qty-btn">-</button>
+            <span class="qty-value">2</span>
+            <button class="qty-btn">+</button>
+          </div>
+          <button class="remove-btn">&#128465;</button>
+        </div>
+      </div>
+
+      <!-- Special Instructions -->
+      <div class="modifier-section">
+        <div class="modifier-title">Special Instructions for Kitchen</div>
+        <textarea class="special-instructions" placeholder="Any special requests for the entire order?"></textarea>
+      </div>
+
+      <!-- Order Summary -->
+      <div class="order-summary">
+        <div class="summary-title">Order Summary</div>
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span>$82.00</span>
+        </div>
+        <div class="summary-row">
+          <span>Tax (10%)</span>
+          <span>$8.20</span>
+        </div>
+        <div class="summary-row total">
+          <span>Total</span>
+          <span>$90.20</span>
+        </div>
+      </div>
+
+      <!-- Info Note -->
+      <div style="background: #e8f4fd; padding: 15px; border-radius: 12px; margin-top: 15px;">
+        <div style="display: flex; align-items: flex-start; gap: 10px;">
+          <span style="font-size: 20px;">&#9432;</span>
+          <div style="font-size: 13px; color: #2980b9;">
+            <strong>Pay After Your Meal</strong><br>
+            You can place multiple orders during your visit. Payment will be processed when you request the bill.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Place Order Bar -->
+    <div class="add-to-cart-bar" style="flex-direction: column; gap: 10px; height: auto; padding: 15px 20px;">
+      <button class="add-to-cart-btn" style="width: 100%;">Place Order - $90.20</button>
+      <button style="width: 100%; padding: 12px; background: transparent; border: 2px solid #e74c3c; color: #e74c3c; border-radius: 12px; font-weight: 600; cursor: pointer;">Continue Browsing</button>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="bottom-nav">
+      <div class="nav-item">
+        <span class="nav-icon">&#127968;</span>
+        <span>Menu</span>
+      </div>
+      <div class="nav-item active" style="position: relative;">
+        <span class="nav-icon">&#128722;</span>
+        <span class="nav-badge">3</span>
+        <span>Cart</span>
+      </div>
+      <div class="nav-item">
+        <span class="nav-icon">&#128203;</span>
+        <span>Orders</span>
+      </div>
+      <div class="nav-item">
+        <span class="nav-icon">&#128100;</span>
+        <span>Profile</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

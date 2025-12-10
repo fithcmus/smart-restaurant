@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orders - Smart Restaurant Admin</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body style="background: #f5f6fa;">
+  <div class="admin-layout">
+    <!-- Sidebar -->
+    <div class="admin-sidebar">
+      <div class="sidebar-logo">
+        <span style="font-size: 30px;">&#127860;</span>
+        <span>Smart Restaurant</span>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-link">
+          <span class="nav-icon">&#128202;</span>
+          Dashboard
+        </a>
+        <a href="orders.html" class="nav-link active">
+          <span class="nav-icon">&#128203;</span>
+          Orders
+          <span class="nav-badge">5</span>
+        </a>
+        <a href="menu.html" class="nav-link">
+          <span class="nav-icon">&#127860;</span>
+          Menu Items
+        </a>
+        <a href="categories.html" class="nav-link">
+          <span class="nav-icon">&#128193;</span>
+          Categories
+        </a>
+        <a href="tables.html" class="nav-link">
+          <span class="nav-icon">&#129689;</span>
+          Tables
+        </a>
+        <a href="staff.html" class="nav-link">
+          <span class="nav-icon">&#128101;</span>
+          Kitchen Staff
+        </a>
+        <a href="reports.html" class="nav-link">
+          <span class="nav-icon">&#128200;</span>
+          Reports
+        </a>
+        <a href="kds.html" class="nav-link">
+          <span class="nav-icon">&#128250;</span>
+          Kitchen Display
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="admin-profile">
+          <div class="admin-avatar">JD</div>
+          <div class="admin-info">
+            <div class="admin-name">John Doe</div>
+            <div class="admin-role">Restaurant Admin</div>
+          </div>
+        </div>
+        <a href="#" class="logout-link">&#128682; Logout</a>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="admin-main">
+      <!-- Header -->
+      <div class="admin-header">
+        <div>
+          <h1 class="page-title">Orders</h1>
+          <p class="page-subtitle">Manage and track all orders</p>
+        </div>
+        <div style="display: flex; gap: 10px;">
+          <button class="btn-secondary">&#128250; Open KDS</button>
+          <button class="btn-primary">+ Manual Order</button>
+        </div>
+      </div>
+
+      <!-- Status Tabs -->
+      <div class="status-tabs">
+        <button class="status-tab active">
+          All Orders
+          <span class="tab-count">48</span>
+        </button>
+        <button class="status-tab">
+          Received
+          <span class="tab-count warning">3</span>
+        </button>
+        <button class="status-tab">
+          Preparing
+          <span class="tab-count">5</span>
+        </button>
+        <button class="status-tab">
+          Ready
+          <span class="tab-count success">2</span>
+        </button>
+        <button class="status-tab">
+          Completed
+          <span class="tab-count">38</span>
+        </button>
+      </div>
+
+      <!-- Filters -->
+      <div class="filters-bar">
+        <div class="search-box">
+          <span>&#128269;</span>
+          <input type="text" placeholder="Search by order ID or table...">
+        </div>
+        <select class="filter-select">
+          <option>All Tables</option>
+          <option>Table 1</option>
+          <option>Table 2</option>
+          <option>Table 3</option>
+          <option>Table 4</option>
+          <option>Table 5</option>
+        </select>
+        <select class="filter-select">
+          <option>Today</option>
+          <option>Yesterday</option>
+          <option>This Week</option>
+          <option>This Month</option>
+        </select>
+      </div>
+
+      <!-- Orders Table -->
+      <div class="table-card">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Table</th>
+              <th>Items</th>
+              <th>Total</th>
+              <th>Status</th>
+              <th>Time</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- New Order - Highlight -->
+            <tr class="new-order">
+              <td><strong>#ORD-0051</strong></td>
+              <td>Table 8</td>
+              <td>
+                <div class="order-items-preview">
+                  <span>1x Grilled Salmon</span>
+                  <span>2x Caesar Salad</span>
+                  <span class="more">+1 more</span>
+                </div>
+              </td>
+              <td>$52.00</td>
+              <td><span class="status-badge received">&#128276; New</span></td>
+              <td>Just now</td>
+              <td>
+                <button class="btn-action accept">Accept</button>
+                <button class="btn-action view">View</button>
+              </td>
+            </tr>
+
+            <tr>
+              <td>#ORD-0050</td>
+              <td>Table 3</td>
+              <td>
+                <div class="order-items-preview">
+                  <span>2x Pasta Carbonara</span>
+                  <span>1x Red Wine</span>
+                </div>
+              </td>
+              <td>$38.00</td>
+              <td><span class="status-badge received">Received</span></td>
+              <td>2 min ago</td>
+              <td>
+                <button class="btn-action accept">Accept</button>
+                <button class="btn-action view">View</button>
+              </td>
+            </tr>
+
+            <tr>
+              <td>#ORD-0049</td>
+              <td>Table 5</td>
+              <td>
+                <div class="order-items-preview">
+                  <span>1x Pasta Carbonara</span>
+                  <span>2x Mushroom Soup</span>
+                </div>
+              </td>
+              <td>$31.00</td>
+              <td><span class="status-badge preparing">Preparing</span></td>
+              <td>5 min ago</td>
+              <td>
+                <button class="btn-action ready">Mark Ready</button>
+                <button class="btn-action view">View</button>
+              </td>
+            </tr>
+
+            <tr>
+              <td>#ORD-0048</td>
+              <td>Table 12</td>
+              <td>
+                <div class="order-items-preview">
+                  <span>2x Beef Steak</span>
+                  <span>2x Red Wine</span>
+                  <span class="more">+2 more</span>
+                </div>
+              </td>
+              <td>$124.00</td>
+              <td>
+                <span class="status-badge preparing warning">
+                  &#9888; Preparing (18m)
+                </span>
+              </td>
+              <td>18 min ago</td>
+              <td>
+                <button class="btn-action ready">Mark Ready</button>
+                <button class="btn-action view">View</button>
+              </td>
+            </tr>
+
+            <tr>
+              <td>#ORD-0047</td>
+              <td>Table 1</td>
+              <td>
+                <div class="order-items-preview">
+                  <span>1x Grilled Salmon</span>
+                  <span>1x Caesar Salad</span>
+                </div>
+              </td>
+              <td>$30.00</td>
+              <td><span class="status-badge ready">Ready</span></td>
+              <td>12 min ago</td>
+              <td>
+                <button class="btn-action complete">Complete</button>
+                <button class="btn-action view">View</button>
+              </td>
+            </tr>
+
+            <tr>
+              <td>#ORD-0046</td>
+              <td>Table 5</td>
+              <td>
+                <div class="order-items-preview">
+                  <span>2x Grilled Salmon (Large)</span>
+                  <span>1x Caesar Salad</span>
+                  <span class="more">+2 more</span>
+                </div>
+              </td>
+              <td>$111.40</td>
+              <td><span class="status-badge ready">Ready</span></td>
+              <td>25 min ago</td>
+              <td>
+                <button class="btn-action complete">Complete</button>
+                <button class="btn-action view">View</button>
+              </td>
+            </tr>
+
+            <tr class="completed-row">
+              <td>#ORD-0045</td>
+              <td>Table 7</td>
+              <td>
+                <div class="order-items-preview">
+                  <span>3x Mushroom Soup</span>
+                  <span>2x Pasta Carbonara</span>
+                </div>
+              </td>
+              <td>$54.00</td>
+              <td><span class="status-badge completed">Completed</span></td>
+              <td>35 min ago</td>
+              <td>
+                <button class="btn-action view">View</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Pagination -->
+        <div class="pagination">
+          <button class="page-btn" disabled>&#8592; Previous</button>
+          <span class="page-info">Showing 1-7 of 48 orders</span>
+          <button class="page-btn">Next &#8594;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

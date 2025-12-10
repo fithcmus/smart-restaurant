@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment - Smart Restaurant</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="mobile-container">
+    <!-- Header -->
+    <div class="header">
+      <button class="header-back">&#8592;</button>
+      <span class="header-title">Your Bill</span>
+      <span class="header-table">Table 5</span>
+    </div>
+
+    <!-- Content -->
+    <div class="content" style="padding-bottom: 100px;">
+      <!-- Bill Header -->
+      <div style="text-align: center; padding: 20px 0; border-bottom: 2px dashed #dfe6e9; margin-bottom: 20px;">
+        <div style="font-size: 40px; margin-bottom: 10px;">&#127860;</div>
+        <div style="font-size: 20px; font-weight: 700;">Smart Restaurant</div>
+        <div style="color: #7f8c8d; font-size: 14px;">Table 5 | Dec 10, 2025</div>
+      </div>
+
+      <!-- Bill Items -->
+      <div class="bill-section">
+        <div class="bill-section-title">Order #1</div>
+        <div class="bill-item">
+          <div class="bill-item-details">
+            <span class="bill-item-qty">2x</span>
+            <div>
+              <div class="bill-item-name">Grilled Salmon (Large)</div>
+              <div class="bill-item-mods">+ Side salad</div>
+            </div>
+          </div>
+          <span class="bill-item-price">$54.00</span>
+        </div>
+        <div class="bill-item">
+          <div class="bill-item-details">
+            <span class="bill-item-qty">1x</span>
+            <div>
+              <div class="bill-item-name">Caesar Salad</div>
+            </div>
+          </div>
+          <span class="bill-item-price">$12.00</span>
+        </div>
+        <div class="bill-item">
+          <div class="bill-item-details">
+            <span class="bill-item-qty">2x</span>
+            <div>
+              <div class="bill-item-name">Red Wine (Glass)</div>
+            </div>
+          </div>
+          <span class="bill-item-price">$16.00</span>
+        </div>
+      </div>
+
+      <div class="bill-section">
+        <div class="bill-section-title">Order #2</div>
+        <div class="bill-item">
+          <div class="bill-item-details">
+            <span class="bill-item-qty">1x</span>
+            <div>
+              <div class="bill-item-name">Pasta Carbonara</div>
+            </div>
+          </div>
+          <span class="bill-item-price">$15.00</span>
+        </div>
+        <div class="bill-item">
+          <div class="bill-item-details">
+            <span class="bill-item-qty">2x</span>
+            <div>
+              <div class="bill-item-name">Mushroom Soup</div>
+            </div>
+          </div>
+          <span class="bill-item-price">$16.00</span>
+        </div>
+      </div>
+
+      <!-- Totals -->
+      <div style="border-top: 2px dashed #dfe6e9; padding-top: 15px; margin-top: 20px;">
+        <div class="bill-total-row">
+          <span>Subtotal</span>
+          <span>$113.00</span>
+        </div>
+        <div class="bill-total-row">
+          <span>Tax (10%)</span>
+          <span>$11.30</span>
+        </div>
+        <div class="bill-total-row grand-total">
+          <span>Total</span>
+          <span>$124.30</span>
+        </div>
+      </div>
+
+      <!-- Payment Methods -->
+      <div class="modifier-section">
+        <div class="modifier-title">Payment Method</div>
+
+        <div class="payment-option selected">
+          <label class="modifier-label">
+            <input type="radio" name="payment" checked>
+            <span style="display: flex; align-items: center; gap: 10px;">
+              <span style="font-size: 24px;">&#128179;</span>
+              Credit/Debit Card
+            </span>
+          </label>
+        </div>
+
+        <!-- Stripe Card Input (mockup) -->
+        <div class="stripe-card-input">
+          <div class="form-group">
+            <label class="form-label">Card Number</label>
+            <input type="text" class="form-input" placeholder="4242 4242 4242 4242" value="4242 4242 4242 4242">
+          </div>
+          <div style="display: flex; gap: 15px;">
+            <div class="form-group" style="flex: 1;">
+              <label class="form-label">Expiry</label>
+              <input type="text" class="form-input" placeholder="MM/YY" value="12/25">
+            </div>
+            <div class="form-group" style="flex: 1;">
+              <label class="form-label">CVC</label>
+              <input type="text" class="form-input" placeholder="123" value="123">
+            </div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px; margin-top: 10px; color: #7f8c8d; font-size: 12px;">
+            <span>&#128274;</span>
+            <span>Secured by Stripe</span>
+          </div>
+        </div>
+
+        <div class="payment-option">
+          <label class="modifier-label">
+            <input type="radio" name="payment">
+            <span style="display: flex; align-items: center; gap: 10px;">
+              <span style="font-size: 24px;">&#128181;</span>
+              Pay at Counter
+            </span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Tip Section -->
+      <div class="modifier-section">
+        <div class="modifier-title">Add a Tip</div>
+        <div style="display: flex; gap: 10px;">
+          <button class="tip-btn">10%</button>
+          <button class="tip-btn selected">15%</button>
+          <button class="tip-btn">20%</button>
+          <button class="tip-btn">Custom</button>
+        </div>
+        <div style="margin-top: 10px; color: #7f8c8d; font-size: 14px;">
+          Tip amount: <strong style="color: #2c3e50;">$18.65</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pay Button -->
+    <div class="add-to-cart-bar">
+      <button class="add-to-cart-btn" style="width: 100%;">Pay $142.95</button>
+    </div>
+  </div>
+</body>
+</html>

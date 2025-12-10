@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reports - Smart Restaurant Admin</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body style="background: #f5f6fa;">
+  <div class="admin-layout">
+    <!-- Sidebar -->
+    <div class="admin-sidebar">
+      <div class="sidebar-logo">
+        <span style="font-size: 30px;">&#127860;</span>
+        <span>Smart Restaurant</span>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-link">
+          <span class="nav-icon">&#128202;</span>
+          Dashboard
+        </a>
+        <a href="orders.html" class="nav-link">
+          <span class="nav-icon">&#128203;</span>
+          Orders
+        </a>
+        <a href="menu.html" class="nav-link">
+          <span class="nav-icon">&#127860;</span>
+          Menu Items
+        </a>
+        <a href="categories.html" class="nav-link">
+          <span class="nav-icon">&#128193;</span>
+          Categories
+        </a>
+        <a href="tables.html" class="nav-link">
+          <span class="nav-icon">&#129689;</span>
+          Tables
+        </a>
+        <a href="staff.html" class="nav-link">
+          <span class="nav-icon">&#128101;</span>
+          Kitchen Staff
+        </a>
+        <a href="reports.html" class="nav-link active">
+          <span class="nav-icon">&#128200;</span>
+          Reports
+        </a>
+        <a href="kds.html" class="nav-link">
+          <span class="nav-icon">&#128250;</span>
+          Kitchen Display
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="admin-profile">
+          <div class="admin-avatar">JD</div>
+          <div class="admin-info">
+            <div class="admin-name">John Doe</div>
+            <div class="admin-role">Restaurant Admin</div>
+          </div>
+        </div>
+        <a href="#" class="logout-link">&#128682; Logout</a>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="admin-main">
+      <!-- Header -->
+      <div class="admin-header">
+        <div>
+          <h1 class="page-title">Reports & Analytics</h1>
+          <p class="page-subtitle">Track your restaurant's performance</p>
+        </div>
+        <div style="display: flex; gap: 10px; align-items: center;">
+          <select class="filter-select">
+            <option>Last 7 Days</option>
+            <option>Last 30 Days</option>
+            <option>This Month</option>
+            <option>Last Month</option>
+            <option>Custom Range</option>
+          </select>
+          <button class="btn-secondary">&#128438; Export PDF</button>
+          <button class="btn-secondary">&#128462; Export CSV</button>
+        </div>
+      </div>
+
+      <!-- Summary Stats -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon" style="background: #e8f8f5; color: #27ae60;">&#128176;</div>
+          <div class="stat-content">
+            <div class="stat-value">$18,542</div>
+            <div class="stat-label">Total Revenue</div>
+            <div class="stat-change positive">&#8593; 15.3% vs last period</div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon" style="background: #ebf5fb; color: #3498db;">&#128230;</div>
+          <div class="stat-content">
+            <div class="stat-value">342</div>
+            <div class="stat-label">Total Orders</div>
+            <div class="stat-change positive">&#8593; 8.2% vs last period</div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon" style="background: #fef9e7; color: #f39c12;">&#127860;</div>
+          <div class="stat-content">
+            <div class="stat-value">$54.21</div>
+            <div class="stat-label">Avg. Order Value</div>
+            <div class="stat-change positive">&#8593; 6.5% vs last period</div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon" style="background: #fdedec; color: #e74c3c;">&#128337;</div>
+          <div class="stat-content">
+            <div class="stat-value">16 min</div>
+            <div class="stat-label">Avg. Prep Time</div>
+            <div class="stat-change negative">&#8593; 2 min vs target</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Charts Row -->
+      <div class="charts-row">
+        <!-- Revenue Chart -->
+        <div class="chart-card" style="flex: 2;">
+          <div class="chart-header">
+            <h3>Revenue Over Time</h3>
+            <div style="display: flex; gap: 10px;">
+              <button class="chart-toggle active">Daily</button>
+              <button class="chart-toggle">Weekly</button>
+              <button class="chart-toggle">Monthly</button>
+            </div>
+          </div>
+          <div class="chart-placeholder" style="height: 300px;">
+            <!-- Line chart placeholder -->
+            <svg viewBox="0 0 600 200" style="width: 100%; height: 100%;">
+              <defs>
+                <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" style="stop-color:#e74c3c;stop-opacity:0.3" />
+                  <stop offset="100%" style="stop-color:#e74c3c;stop-opacity:0" />
+                </linearGradient>
+              </defs>
+              <!-- Grid lines -->
+              <line x1="50" y1="20" x2="550" y2="20" stroke="#dfe6e9" stroke-width="1"/>
+              <line x1="50" y1="60" x2="550" y2="60" stroke="#dfe6e9" stroke-width="1"/>
+              <line x1="50" y1="100" x2="550" y2="100" stroke="#dfe6e9" stroke-width="1"/>
+              <line x1="50" y1="140" x2="550" y2="140" stroke="#dfe6e9" stroke-width="1"/>
+              <line x1="50" y1="180" x2="550" y2="180" stroke="#dfe6e9" stroke-width="1"/>
+              <!-- Area -->
+              <path d="M50,160 L120,120 L190,140 L260,80 L330,100 L400,60 L470,90 L540,40 L540,180 L50,180 Z" fill="url(#gradient)"/>
+              <!-- Line -->
+              <path d="M50,160 L120,120 L190,140 L260,80 L330,100 L400,60 L470,90 L540,40" fill="none" stroke="#e74c3c" stroke-width="3"/>
+              <!-- Points -->
+              <circle cx="50" cy="160" r="5" fill="#e74c3c"/>
+              <circle cx="120" cy="120" r="5" fill="#e74c3c"/>
+              <circle cx="190" cy="140" r="5" fill="#e74c3c"/>
+              <circle cx="260" cy="80" r="5" fill="#e74c3c"/>
+              <circle cx="330" cy="100" r="5" fill="#e74c3c"/>
+              <circle cx="400" cy="60" r="5" fill="#e74c3c"/>
+              <circle cx="470" cy="90" r="5" fill="#e74c3c"/>
+              <circle cx="540" cy="40" r="5" fill="#e74c3c"/>
+              <!-- Labels -->
+              <text x="50" y="195" fill="#7f8c8d" font-size="11" text-anchor="middle">Mon</text>
+              <text x="120" y="195" fill="#7f8c8d" font-size="11" text-anchor="middle">Tue</text>
+              <text x="190" y="195" fill="#7f8c8d" font-size="11" text-anchor="middle">Wed</text>
+              <text x="260" y="195" fill="#7f8c8d" font-size="11" text-anchor="middle">Thu</text>
+              <text x="330" y="195" fill="#7f8c8d" font-size="11" text-anchor="middle">Fri</text>
+              <text x="400" y="195" fill="#7f8c8d" font-size="11" text-anchor="middle">Sat</text>
+              <text x="470" y="195" fill="#7f8c8d" font-size="11" text-anchor="middle">Sun</text>
+              <text x="540" y="195" fill="#7f8c8d" font-size="11" text-anchor="middle">Today</text>
+              <!-- Y axis labels -->
+              <text x="40" y="25" fill="#7f8c8d" font-size="10" text-anchor="end">$4k</text>
+              <text x="40" y="65" fill="#7f8c8d" font-size="10" text-anchor="end">$3k</text>
+              <text x="40" y="105" fill="#7f8c8d" font-size="10" text-anchor="end">$2k</text>
+              <text x="40" y="145" fill="#7f8c8d" font-size="10" text-anchor="end">$1k</text>
+              <text x="40" y="185" fill="#7f8c8d" font-size="10" text-anchor="end">$0</text>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Orders by Hour -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <h3>Peak Hours</h3>
+          </div>
+          <div class="peak-hours">
+            <div class="hour-bar">
+              <span class="hour-label">11 AM</span>
+              <div class="hour-fill" style="width: 40%;"></div>
+              <span class="hour-value">24</span>
+            </div>
+            <div class="hour-bar">
+              <span class="hour-label">12 PM</span>
+              <div class="hour-fill peak" style="width: 95%;"></div>
+              <span class="hour-value">58</span>
+            </div>
+            <div class="hour-bar">
+              <span class="hour-label">1 PM</span>
+              <div class="hour-fill peak" style="width: 85%;"></div>
+              <span class="hour-value">52</span>
+            </div>
+            <div class="hour-bar">
+              <span class="hour-label">6 PM</span>
+              <div class="hour-fill" style="width: 70%;"></div>
+              <span class="hour-value">42</span>
+            </div>
+            <div class="hour-bar">
+              <span class="hour-label">7 PM</span>
+              <div class="hour-fill peak" style="width: 100%;"></div>
+              <span class="hour-value">62</span>
+            </div>
+            <div class="hour-bar">
+              <span class="hour-label">8 PM</span>
+              <div class="hour-fill" style="width: 75%;"></div>
+              <span class="hour-value">45</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Top Items Table -->
+      <div class="table-card">
+        <div class="table-header">
+          <h3>Top Selling Items</h3>
+          <a href="#" class="view-all">View All &#8594;</a>
+        </div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Item</th>
+              <th>Category</th>
+              <th>Orders</th>
+              <th>Revenue</th>
+              <th>Trend</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="rank-badge gold">1</span></td>
+              <td>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                  <span style="font-size: 24px;">&#127860;</span>
+                  Grilled Salmon
+                </div>
+              </td>
+              <td>Main Dishes</td>
+              <td>124</td>
+              <td>$2,232</td>
+              <td><span class="trend-up">&#8593; 12%</span></td>
+            </tr>
+            <tr>
+              <td><span class="rank-badge silver">2</span></td>
+              <td>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                  <span style="font-size: 24px;">&#127837;</span>
+                  Pasta Carbonara
+                </div>
+              </td>
+              <td>Main Dishes</td>
+              <td>98</td>
+              <td>$1,470</td>
+              <td><span class="trend-up">&#8593; 8%</span></td>
+            </tr>
+            <tr>
+              <td><span class="rank-badge bronze">3</span></td>
+              <td>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                  <span style="font-size: 24px;">&#129385;</span>
+                  Beef Steak
+                </div>
+              </td>
+              <td>Main Dishes</td>
+              <td>76</td>
+              <td>$1,900</td>
+              <td><span class="trend-down">&#8595; 3%</span></td>
+            </tr>
+            <tr>
+              <td><span class="rank-badge">4</span></td>
+              <td>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                  <span style="font-size: 24px;">&#127864;</span>
+                  Red Wine
+                </div>
+              </td>
+              <td>Drinks</td>
+              <td>156</td>
+              <td>$1,248</td>
+              <td><span class="trend-up">&#8593; 15%</span></td>
+            </tr>
+            <tr>
+              <td><span class="rank-badge">5</span></td>
+              <td>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                  <span style="font-size: 24px;">&#129367;</span>
+                  Caesar Salad
+                </div>
+              </td>
+              <td>Appetizers</td>
+              <td>65</td>
+              <td>$780</td>
+              <td><span class="trend-up">&#8593; 5%</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
