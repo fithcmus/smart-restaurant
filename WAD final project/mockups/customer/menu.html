@@ -7,6 +7,46 @@
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+  <!-- Mockup Navigation Panel -->
+  <button class="mockup-nav-toggle" onclick="document.getElementById('mockupNav').classList.add('open'); document.getElementById('mockupOverlay').classList.add('open');">&#9776;</button>
+  <div class="mockup-nav-overlay" id="mockupOverlay" onclick="document.getElementById('mockupNav').classList.remove('open'); this.classList.remove('open');"></div>
+  <div class="mockup-nav-panel" id="mockupNav">
+    <div class="mockup-nav-header">
+      <h3>All Mockups</h3>
+      <button class="mockup-nav-close" onclick="document.getElementById('mockupNav').classList.remove('open'); document.getElementById('mockupOverlay').classList.remove('open');">&times;</button>
+    </div>
+    <div class="mockup-nav-section">
+      <h4>Customer App</h4>
+      <div class="mockup-nav-links">
+        <a href="login.html" class="mockup-nav-link">Login</a>
+        <a href="register.html" class="mockup-nav-link">Register</a>
+        <a href="menu.html" class="mockup-nav-link active">Menu</a>
+        <a href="item-detail.html" class="mockup-nav-link">Item Detail</a>
+        <a href="cart.html" class="mockup-nav-link">Cart</a>
+        <a href="order-status.html" class="mockup-nav-link">Order Status</a>
+        <a href="payment.html" class="mockup-nav-link">Payment</a>
+      </div>
+    </div>
+    <div class="mockup-nav-section">
+      <h4>Admin Panel</h4>
+      <div class="mockup-nav-links">
+        <a href="../admin/login.html" class="mockup-nav-link">Login</a>
+        <a href="../admin/dashboard.html" class="mockup-nav-link">Dashboard</a>
+        <a href="../admin/menu.html" class="mockup-nav-link">Menu Management</a>
+        <a href="../admin/orders.html" class="mockup-nav-link">Orders</a>
+        <a href="../admin/tables.html" class="mockup-nav-link">Tables</a>
+        <a href="../admin/reports.html" class="mockup-nav-link">Reports</a>
+        <a href="../admin/kds.html" class="mockup-nav-link">Kitchen Display</a>
+      </div>
+    </div>
+    <div class="mockup-nav-section">
+      <h4>Waiter App</h4>
+      <div class="mockup-nav-links">
+        <a href="../waiter/orders.html" class="mockup-nav-link">Orders</a>
+      </div>
+    </div>
+  </div>
+
   <div class="mobile-container">
     <!-- Header -->
     <div class="header">
@@ -32,104 +72,114 @@
     <!-- Menu List -->
     <div class="content menu-list">
       <!-- Item 1 -->
-      <div class="menu-item">
-        <div class="menu-item-image">&#127860;</div>
-        <div class="menu-item-info">
-          <div>
-            <div class="menu-item-name">Grilled Salmon</div>
-            <div class="menu-item-rating">&#9733;&#9733;&#9733;&#9733;&#9734; (24 reviews)</div>
-            <span class="menu-item-status available">&#9679; Available</span>
-          </div>
-          <div class="menu-item-bottom">
-            <span class="menu-item-price">$18.00</span>
-            <button class="add-btn">+ Add</button>
+      <a href="item-detail.html" style="text-decoration: none; color: inherit;">
+        <div class="menu-item">
+          <div class="menu-item-image">&#127860;</div>
+          <div class="menu-item-info">
+            <div>
+              <div class="menu-item-name">Grilled Salmon</div>
+              <div class="menu-item-rating">&#9733;&#9733;&#9733;&#9733;&#9734; (24 reviews)</div>
+              <span class="menu-item-status available">&#9679; Available</span>
+            </div>
+            <div class="menu-item-bottom">
+              <span class="menu-item-price">$18.00</span>
+              <button class="add-btn">+ Add</button>
+            </div>
           </div>
         </div>
-      </div>
+      </a>
 
       <!-- Item 2 -->
-      <div class="menu-item">
-        <div class="menu-item-image">&#129367;</div>
-        <div class="menu-item-info">
-          <div>
-            <div class="menu-item-name">Caesar Salad</div>
-            <div class="menu-item-rating">&#9733;&#9733;&#9733;&#9733;&#9733; (18 reviews)</div>
-            <span class="menu-item-status available">&#9679; Available</span>
-          </div>
-          <div class="menu-item-bottom">
-            <span class="menu-item-price">$12.00</span>
-            <button class="add-btn">+ Add</button>
+      <a href="item-detail.html" style="text-decoration: none; color: inherit;">
+        <div class="menu-item">
+          <div class="menu-item-image">&#129367;</div>
+          <div class="menu-item-info">
+            <div>
+              <div class="menu-item-name">Caesar Salad</div>
+              <div class="menu-item-rating">&#9733;&#9733;&#9733;&#9733;&#9733; (18 reviews)</div>
+              <span class="menu-item-status available">&#9679; Available</span>
+            </div>
+            <div class="menu-item-bottom">
+              <span class="menu-item-price">$12.00</span>
+              <button class="add-btn">+ Add</button>
+            </div>
           </div>
         </div>
-      </div>
+      </a>
 
       <!-- Item 3 -->
-      <div class="menu-item">
-        <div class="menu-item-image">&#129385;</div>
-        <div class="menu-item-info">
-          <div>
-            <div class="menu-item-name">Beef Steak</div>
-            <div class="menu-item-rating">&#9733;&#9733;&#9733;&#9733;&#9734; (32 reviews)</div>
-            <span class="menu-item-status sold-out">&#9679; Sold Out</span>
-          </div>
-          <div class="menu-item-bottom">
-            <span class="menu-item-price">$25.00</span>
+      <a href="item-detail.html" style="text-decoration: none; color: inherit;">
+        <div class="menu-item">
+          <div class="menu-item-image">&#129385;</div>
+          <div class="menu-item-info">
+            <div>
+              <div class="menu-item-name">Beef Steak</div>
+              <div class="menu-item-rating">&#9733;&#9733;&#9733;&#9733;&#9734; (32 reviews)</div>
+              <span class="menu-item-status sold-out">&#9679; Sold Out</span>
+            </div>
+            <div class="menu-item-bottom">
+              <span class="menu-item-price">$25.00</span>
+            </div>
           </div>
         </div>
-      </div>
+      </a>
 
       <!-- Item 4 -->
-      <div class="menu-item">
-        <div class="menu-item-image">&#127837;</div>
-        <div class="menu-item-info">
-          <div>
-            <div class="menu-item-name">Pasta Carbonara</div>
-            <div class="menu-item-rating">&#9733;&#9733;&#9733;&#9733;&#9733; (45 reviews)</div>
-            <span class="menu-item-status available">&#9679; Available</span>
-          </div>
-          <div class="menu-item-bottom">
-            <span class="menu-item-price">$15.00</span>
-            <button class="add-btn">+ Add</button>
+      <a href="item-detail.html" style="text-decoration: none; color: inherit;">
+        <div class="menu-item">
+          <div class="menu-item-image">&#127837;</div>
+          <div class="menu-item-info">
+            <div>
+              <div class="menu-item-name">Pasta Carbonara</div>
+              <div class="menu-item-rating">&#9733;&#9733;&#9733;&#9733;&#9733; (45 reviews)</div>
+              <span class="menu-item-status available">&#9679; Available</span>
+            </div>
+            <div class="menu-item-bottom">
+              <span class="menu-item-price">$15.00</span>
+              <button class="add-btn">+ Add</button>
+            </div>
           </div>
         </div>
-      </div>
+      </a>
 
       <!-- Item 5 -->
-      <div class="menu-item">
-        <div class="menu-item-image">&#129379;</div>
-        <div class="menu-item-info">
-          <div>
-            <div class="menu-item-name">Mushroom Soup</div>
-            <div class="menu-item-rating">&#9733;&#9733;&#9733;&#9733;&#9734; (15 reviews)</div>
-            <span class="menu-item-status available">&#9679; Available</span>
-          </div>
-          <div class="menu-item-bottom">
-            <span class="menu-item-price">$8.00</span>
-            <button class="add-btn">+ Add</button>
+      <a href="item-detail.html" style="text-decoration: none; color: inherit;">
+        <div class="menu-item">
+          <div class="menu-item-image">&#129379;</div>
+          <div class="menu-item-info">
+            <div>
+              <div class="menu-item-name">Mushroom Soup</div>
+              <div class="menu-item-rating">&#9733;&#9733;&#9733;&#9733;&#9734; (15 reviews)</div>
+              <span class="menu-item-status available">&#9679; Available</span>
+            </div>
+            <div class="menu-item-bottom">
+              <span class="menu-item-price">$8.00</span>
+              <button class="add-btn">+ Add</button>
+            </div>
           </div>
         </div>
-      </div>
+      </a>
     </div>
 
     <!-- Bottom Navigation -->
     <div class="bottom-nav">
-      <div class="nav-item active">
+      <a href="menu.html" class="nav-item active" style="text-decoration: none; color: inherit;">
         <span class="nav-icon">&#127968;</span>
         <span>Menu</span>
-      </div>
-      <div class="nav-item" style="position: relative;">
+      </a>
+      <a href="cart.html" class="nav-item" style="text-decoration: none; color: inherit; position: relative;">
         <span class="nav-icon">&#128722;</span>
         <span class="nav-badge">2</span>
         <span>Cart</span>
-      </div>
-      <div class="nav-item">
+      </a>
+      <a href="order-status.html" class="nav-item" style="text-decoration: none; color: inherit;">
         <span class="nav-icon">&#128203;</span>
         <span>Orders</span>
-      </div>
-      <div class="nav-item">
+      </a>
+      <a href="login.html" class="nav-item" style="text-decoration: none; color: inherit;">
         <span class="nav-icon">&#128100;</span>
         <span>Profile</span>
-      </div>
+      </a>
     </div>
   </div>
 </body>

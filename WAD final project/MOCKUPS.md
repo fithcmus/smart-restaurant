@@ -15,6 +15,11 @@ Interactive HTML/CSS mockups are available in the `mockups/` folder:
 | [login.html](mockups/customer/login.html) | Customer login page |
 | [register.html](mockups/customer/register.html) | Customer registration page |
 
+### Waiter Pages (`mockups/waiter/`)
+| File | Description |
+|------|-------------|
+| [orders.html](mockups/waiter/orders.html) | Waiter order acceptance dashboard |
+
 ### Admin Dashboard Pages (`mockups/admin/`)
 | File | Description |
 |------|-------------|
@@ -668,7 +673,10 @@ Below are text-based wireframes for reference:
 
 ```
 Customer Flow:
-QR Scan → Menu → Item Detail → Cart → Place Order → Track Status → Request Bill → Payment
+QR Scan → Menu → Item Detail → Cart → Submit Items → Track Status → Add More Items → Request Bill → Payment
+
+Waiter Flow:
+Login → View Pending Orders → Accept/Reject Orders → Send to Kitchen → Mark as Served
 
 Admin Flow:
 Login → Dashboard → Menu/Tables/Orders/Reports/Staff

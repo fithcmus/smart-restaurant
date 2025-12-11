@@ -26,12 +26,13 @@ Students must input minus points to every uncompleted feature in the SE column.
 | ----- | :---- | ----- | :---- | :---- | :---- |
 |  |  | **Point** | **SE\*** | **TR\*** |  |
 | **1** | **Overall requirements** |  |  |  |  |
+|  | User-centered design | \-5 |  |  | Built with user experience in mind, not just feature list. Focus on solving real restaurant problems: seamless QR ordering, efficient waiter workflow, real-time kitchen coordination, and convenient payment options |
 |  | Database design | \-1 |  |  | Database with tables: users, restaurants, menus, menu_items, categories, modifiers, tables, orders, order_items, payments |
 |  | Database mock data | \-1 |  |  | Sample restaurants, menu items, categories, tables, and test orders |
 |  | Website layout | \-2 |  |  | Two layouts: Customer mobile ordering interface and Admin dashboard |
 |  | Website architect | \-3 |  |  | Based on MVC architecture. Clear separation of concerns with controllers, services, repositories. Client-side validation, Input validation, Business rule validation |
 |  | Website stability and compatibility | \-2 |  |  | Mobile-first responsive design, tested on Chrome and Safari |
-|  | Document | \-1 |  |  | Comprehensive documentation: SRS, User Stories, Acceptance Criteria, API Documentation (OpenAPI), Architecture diagrams |
+|  | Document | \-1 |  |  | Clear documentation for developers and users: setup guide, API endpoints, database design, system architecture, user guide |
 |  | Demo video | \-5 |  |  | Video demonstrating all features: restaurant signup, menu management, QR ordering, payment, KDS |
 |  | Publish to public hosts | \-1 |  |  | Deployed to a public hosting service with accessible URL |
 |  | Development progress is recorded in Github | \-7 |  |  | Git history with meaningful commits, branches for features, pull requests |
@@ -41,8 +42,8 @@ Students must input minus points to every uncompleted feature in the SE column.
 |  | Filter menu items by |  |  |  | A combination of the criteria |
 |  | › Item name | \-0.25 |  |  | Search menu items by name |
 |  | › Category | \-0.25 |  |  | Filter by food categories (Appetizers, Main Dishes, Drinks, Desserts) |
-|  | › Price range | \-0.25 |  |  | Filter items by price range |
-|  | Sort menu items by price, popularity | \-0.25 |  |  | Sort by price ascending/descending, most ordered |
+|  | Sort menu items by popularity | \-0.25 |  |  | Sort by most ordered items |
+|  | › Chef recommendation | \-0.25 |  |  | Filter/highlight items marked as chef's recommendations |
 |  | Menu item paging | \-0.75 |  |  | Pagination for large menus with infinite scroll. URL updated on search/filter/paging |
 |  | View menu item details | \-0.25 |  |  | Item detail page with full description, modifiers, allergen info |
 |  | View menu item status | \-0.25 |  |  | Display item availability status (Available, Unavailable, Sold out) |
@@ -55,7 +56,7 @@ Students must input minus points to every uncompleted feature in the SE column.
 |  | Ordering and payment (Dine-in) |  |  |  |  |
 |  | › Bind the shopping cart to the table session | \-0.25 |  |  | Cart persists for table session |
 |  | › Input order details (notes, special requests) | \-0.25 |  |  | Guest name, special instructions field |
-|  | › Place multiple orders per visit | \-0.25 |  |  | Customers can add more items during their meal |
+|  | › Add items to current order | \-0.25 |  |  | Customers can add more items to their unpaid order (single order per table session) |
 |  | › View order status | \-0.25 |  |  | Guest can track order status (Received → Preparing → Ready) |
 |  | › View order details | \-0.25 |  |  | Order confirmation with items, total, table number |
 |  | › Request bill | \-0.25 |  |  | Customer requests bill when ready to pay |
@@ -67,7 +68,7 @@ Students must input minus points to every uncompleted feature in the SE column.
 |  | Account activation by email | \-0.25 |  |  | Email verification link sent on signup |
 |  | Social Sign-up/Sign-In | \-0.25 |  |  | Google OAuth integration |
 |  | Login to the website | \-0.25 |  |  | JWT-based authentication for admin/staff |
-|  | Authorize website features | \-0.25 |  |  | Role-based access control (Super Admin, Admin, Kitchen Staff, Customer) |
+|  | Authorize website features | \-0.25 |  |  | Role-based access control (Super Admin, Admin, Waiter, Kitchen Staff, Customer) |
 |  | Forgot password by email | \-0.25 |  |  | Password reset via email link |
 | **4** | **Features for logged-in users (Customers)** |  |  |  |  |
 |  | Update user profile | \-0.25 |  |  | Customer can update name, preferences |
@@ -83,6 +84,7 @@ Students must input minus points to every uncompleted feature in the SE column.
 |  | Manage Admin accounts | \-0.25 |  |  | View, edit, deactivate Admin accounts |
 | **6** | **Administration features (Restaurant Admin)** |  |  |  |  |
 |  | Update admin profile | \-0.25 |  |  | Restaurant admin profile management |
+|  | Create Waiter accounts | \-0.25 |  |  | Admin creates accounts for waiters |
 |  | Create Kitchen Staff accounts | \-0.25 |  |  | Admin creates accounts for kitchen staff |
 |  | Manage menu categories | \-0.25 |  |  | Create, edit, delete food categories |
 |  | View menu item list | \-0.5 |  |  | List all menu items with filters and pagination |
@@ -115,14 +117,25 @@ Students must input minus points to every uncompleted feature in the SE column.
 |  | › View revenue report in time range | \-0.25 |  |  | Daily, weekly, monthly revenue reports |
 |  | › View top revenue by menu item in time range | \-0.25 |  |  | Best-selling items report |
 |  | › Show interactive chart in reports | \-0.25 |  |  | Chart.js/Recharts for analytics dashboard (orders/day, peak hours, popular items) |
-| **7** | **Advanced features** |  |  |  |  |
-|  | Payment system integration | 1 |  |  | Stripe sandbox integration for card payments |
-|  | Fuzzy search | 0.5 |  |  | Fuzzy matching for menu item search with typo tolerance |
+| **7** | **Waiter features** |  |  |  |  |
+|  | View pending orders | \-0.25 |  |  | List of new orders waiting for waiter acceptance |
+|  | Accept/Reject order items | \-0.25 |  |  | Waiter can accept or reject individual order items |
+|  | Send orders to kitchen | \-0.25 |  |  | Forward accepted orders to Kitchen Display System |
+|  | View assigned tables | \-0.25 |  |  | See tables assigned to the waiter |
+|  | Mark orders as served | \-0.25 |  |  | Update order status when food is delivered to table |
+|  | Bill Management |  |  |  |  |
+|  | › Create bill for table | \-0.25 |  |  | Generate bill with all order items, subtotal, tax, and total |
+|  | › Print bill | \-0.25 |  |  | Print bill to thermal printer or download as PDF |
+|  | › Apply discounts | \-0.25 |  |  | Apply percentage or fixed amount discounts to bill |
+|  | › Process payment | \-0.25 |  |  | Mark bill as paid (cash, card, or e-wallet) |
+| **8** | **Advanced features** |  |  |  |  |
+|  | Payment system integration | 0.5 |  |  | Payment gateway integration (ZaloPay, MoMo, VNPay, Stripe, etc.) - at least 1 required |
+|  | Fuzzy search | 0.25 |  |  | Fuzzy matching for menu item search with typo tolerance |
 |  | Use memory cache to boost performance | 0.25 |  |  | Redis for menu caching and session management |
 |  | Analyze and track user actions | 0.25 |  |  | Google Analytics for QR scan tracking, order conversion metrics |
-|  | Dockerize your project | 0.5 |  |  | Docker containers for backend, frontend, database |
-|  | CI/CD | 0.5 |  |  | GitHub Actions for automated testing and deployment |
-|  | WebSocket real-time updates | 0.5 |  |  | Socket.IO for KDS notifications and order status updates |
+|  | Dockerize your project | 0.25 |  |  | Docker containers for backend, frontend, database |
+|  | CI/CD | 0.25 |  |  | GitHub Actions for automated testing and deployment |
+|  | WebSocket real-time updates | 0.5 |  |  | Socket.IO for real-time features: KDS order notifications, customer order status tracking, waiter new order alerts, kitchen ready notifications, table status updates |
 |  | Multilingual support | 0.25 |  |  | i18n for English/Vietnamese language selection |
 
 # **GIT HISTORY**
@@ -152,8 +165,8 @@ Students must input minus points to every uncompleted feature in the SE column.
 - Manage digital menus with categories, items, and modifiers
 - Generate unique QR codes for each table
 - Allow customers to scan QR, browse menu, and place orders from their phones
-- Customers can place multiple orders during their visit
-- Process payments after the meal via Stripe integration (pay-after-meal model)
+- Customers can add items to their current order during their visit (single order per table session)
+- Process payments after the meal via payment gateway integration (ZaloPay, MoMo, VNPay, Stripe, etc.) - pay-after-meal model
 - Track orders in real-time via Kitchen Display System (KDS)
 - View analytics and performance reports
 
@@ -165,7 +178,7 @@ Students must input minus points to every uncompleted feature in the SE column.
 - **Backend:** NodeJS with Express/similar framework
 - **Database:** SQL or NoSQL database
 - **Authentication:** Passport.js with JWT
-- **Payment:** Stripe API
+- **Payment:** Payment Gateway (ZaloPay, MoMo, VNPay, Stripe, etc.)
 - **Real-time:** Socket.IO / WebSocket
 - **Caching:** Redis (optional)
 - **Hosting:** Public hosting service
@@ -173,8 +186,9 @@ Students must input minus points to every uncompleted feature in the SE column.
 ## Key User Flows
 1. **Restaurant Setup:** Super Admin creates Admin account → Admin login → Menu Creation → Table Setup → QR Generation
 2. **Customer Registration:** Sign up → Email Verification → Login → Access order history
-3. **Customer Ordering (Dine-in):** Scan QR → View Menu → Add to Cart → Place Order → Track Order → Request Bill → Payment
-4. **Order Processing:** New Order → Accept → Preparing → Ready → Completed
+3. **Customer Ordering (Dine-in):** Scan QR → View Menu → Add to Cart → Submit Items → Track Order → Add More Items → Request Bill → Payment
+4. **Waiter Order Acceptance:** Customer Places Order → Waiter Receives Notification → Waiter Reviews → Accept/Reject → Send to Kitchen
+5. **Order Processing (Kitchen):** Waiter Accepts Order → Kitchen Receives → Preparing → Ready → Waiter Serves → Completed
 
 ---
 

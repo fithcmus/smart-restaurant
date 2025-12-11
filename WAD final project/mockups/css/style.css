@@ -2396,3 +2396,126 @@ body {
 .form-hint.success {
   color: var(--success);
 }
+
+/* ================================
+   MOCKUP NAVIGATION PANEL
+   ================================ */
+.mockup-nav-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: var(--secondary);
+  color: var(--white);
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10000;
+  box-shadow: var(--shadow-lg);
+  transition: all 0.3s;
+}
+
+.mockup-nav-toggle:hover {
+  background: var(--primary);
+  transform: scale(1.1);
+}
+
+.mockup-nav-panel {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 300px;
+  height: 100vh;
+  background: var(--white);
+  box-shadow: -4px 0 20px rgba(0,0,0,0.15);
+  z-index: 9999;
+  transition: right 0.3s ease;
+  overflow-y: auto;
+}
+
+.mockup-nav-panel.open {
+  right: 0;
+}
+
+.mockup-nav-header {
+  background: var(--secondary);
+  color: var(--white);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+}
+
+.mockup-nav-header h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.mockup-nav-close {
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.mockup-nav-section {
+  padding: 15px 20px;
+  border-bottom: 1px solid var(--light);
+}
+
+.mockup-nav-section h4 {
+  margin: 0 0 10px;
+  font-size: 14px;
+  color: var(--gray);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.mockup-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.mockup-nav-link {
+  display: block;
+  padding: 10px 15px;
+  color: var(--dark);
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.mockup-nav-link:hover {
+  background: var(--light);
+  color: var(--primary);
+}
+
+.mockup-nav-link.active {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.mockup-nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 9998;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+
+.mockup-nav-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}

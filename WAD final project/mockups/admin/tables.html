@@ -7,6 +7,46 @@
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body style="background: #f5f6fa;">
+  <!-- Mockup Navigation Panel -->
+  <button class="mockup-nav-toggle" onclick="document.getElementById('mockupNav').classList.add('open'); document.getElementById('mockupOverlay').classList.add('open');">&#9776;</button>
+  <div class="mockup-nav-overlay" id="mockupOverlay" onclick="document.getElementById('mockupNav').classList.remove('open'); this.classList.remove('open');"></div>
+  <div class="mockup-nav-panel" id="mockupNav">
+    <div class="mockup-nav-header">
+      <h3>All Mockups</h3>
+      <button class="mockup-nav-close" onclick="document.getElementById('mockupNav').classList.remove('open'); document.getElementById('mockupOverlay').classList.remove('open');">&times;</button>
+    </div>
+    <div class="mockup-nav-section">
+      <h4>Customer App</h4>
+      <div class="mockup-nav-links">
+        <a href="../customer/login.html" class="mockup-nav-link">Login</a>
+        <a href="../customer/register.html" class="mockup-nav-link">Register</a>
+        <a href="../customer/menu.html" class="mockup-nav-link">Menu</a>
+        <a href="../customer/item-detail.html" class="mockup-nav-link">Item Detail</a>
+        <a href="../customer/cart.html" class="mockup-nav-link">Cart</a>
+        <a href="../customer/order-status.html" class="mockup-nav-link">Order Status</a>
+        <a href="../customer/payment.html" class="mockup-nav-link">Payment</a>
+      </div>
+    </div>
+    <div class="mockup-nav-section">
+      <h4>Admin Panel</h4>
+      <div class="mockup-nav-links">
+        <a href="login.html" class="mockup-nav-link">Login</a>
+        <a href="dashboard.html" class="mockup-nav-link">Dashboard</a>
+        <a href="menu.html" class="mockup-nav-link">Menu Management</a>
+        <a href="orders.html" class="mockup-nav-link">Orders</a>
+        <a href="tables.html" class="mockup-nav-link active">Tables</a>
+        <a href="reports.html" class="mockup-nav-link">Reports</a>
+        <a href="kds.html" class="mockup-nav-link">Kitchen Display</a>
+      </div>
+    </div>
+    <div class="mockup-nav-section">
+      <h4>Waiter App</h4>
+      <div class="mockup-nav-links">
+        <a href="../waiter/orders.html" class="mockup-nav-link">Orders</a>
+      </div>
+    </div>
+  </div>
+
   <div class="admin-layout">
     <!-- Sidebar -->
     <div class="admin-sidebar">
@@ -59,7 +99,7 @@
             <div class="admin-role">Restaurant Admin</div>
           </div>
         </div>
-        <a href="#" class="logout-link">&#128682; Logout</a>
+        <a href="login.html" class="logout-link">&#128682; Logout</a>
       </div>
     </div>
 
