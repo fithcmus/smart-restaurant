@@ -106,13 +106,13 @@ Students must input minus points to every uncompleted feature in the SE column.
 |  | › Filter orders by status | \-0.25 |  |  | Filter: Received, Preparing, Ready, Completed |
 |  | › View order details | \-0.25 |  |  | Full order details with items, modifiers, notes |
 |  | › Update order status | \-0.25 |  |  | Progress order through states: Received → Preparing → Ready → Completed |
-|  | › Kitchen Display System (KDS) | 0.5 |  |  | Real-time order display for kitchen staff with sound notifications |
-|  | › Order Timer and Alerts | 0.25 |  |  | Highlight orders exceeding item's configured prep time |
+|  | › Kitchen Display System (KDS) | -0.5 |  |  | Real-time order display for kitchen staff with sound notifications |
+|  | › Order Timer and Alerts | -0.25 |  |  | Highlight orders exceeding item's configured prep time |
 |  | Table Management |  |  |  |  |
-|  | › Create, edit, deactivate tables | 0.5 |  |  | Create, edit, deactivate tables with capacity and location |
-|  | › QR Code Generation | 0.5 |  |  | Generate unique QR codes per table with signed tokens |
-|  | › QR Code Download/Print | 0.25 |  |  | Download QR as PNG/PDF for printing |
-|  | › QR Code Regeneration | 0.25 |  |  | Regenerate QR and invalidate old codes |
+|  | › Create, edit, deactivate tables | -0.5 |  |  | Create, edit, deactivate tables with capacity and location |
+|  | › QR Code Generation | -0.5 |  |  | Generate unique QR codes per table with signed tokens |
+|  | › QR Code Download/Print | -0.25 |  |  | Download QR as PNG/PDF for printing |
+|  | › QR Code Regeneration | -0.25 |  |  | Regenerate QR and invalidate old codes |
 |  | Reports |  |  |  |  |
 |  | › View revenue report in time range | \-0.25 |  |  | Daily, weekly, monthly revenue reports |
 |  | › View top revenue by menu item in time range | \-0.25 |  |  | Best-selling items report |
