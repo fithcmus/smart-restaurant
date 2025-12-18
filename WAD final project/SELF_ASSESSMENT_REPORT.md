@@ -136,6 +136,7 @@ Students must input minus points to every uncompleted feature in the SE column.
 |  | Dockerize your project | 0.25 |  |  | Docker containers for backend, frontend, database |
 |  | CI/CD | 0.25 |  |  | GitHub Actions for automated testing and deployment |
 |  | WebSocket real-time updates | 0.5 |  |  | Socket.IO for real-time features: KDS order notifications, customer order status tracking, waiter new order alerts, kitchen ready notifications, table status updates |
+|  | Multi-tenant support | 0.5 |  |  | Multiple restaurants (tenants) with strict data isolation; tenant-scoped RBAC and configuration |
 |  | Multilingual support | 0.25 |  |  | i18n for English/Vietnamese language selection |
 
 # **GIT HISTORY**
