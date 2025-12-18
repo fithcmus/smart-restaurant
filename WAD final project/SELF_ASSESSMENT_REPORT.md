@@ -136,6 +136,7 @@ Students must input minus points to every uncompleted feature in the SE column.
 |  | Dockerize your project | 0.25 |  |  | Docker containers for backend, frontend, database |
 |  | CI/CD | 0.25 |  |  | GitHub Actions for automated testing and deployment |
 |  | Monitoring and logging | 0.25 |  |  | Centralized application logs, metrics, dashboards, and alerting (e.g., ELK/EFK, Prometheus/Grafana) |
+|  | BI integration | 0.25 |  |  | Connect operational data to BI tools for reporting and dashboards (e.g., Power BI, Tableau, Metabase) |
 |  | WebSocket real-time updates | 0.5 |  |  | Socket.IO for real-time features: KDS order notifications, customer order status tracking, waiter new order alerts, kitchen ready notifications, table status updates |
 |  | Multi-tenant support | 0.5 |  |  | Multiple restaurants (tenants) with strict data isolation; tenant-scoped RBAC and configuration |
 |  | Multilingual support | 0.25 |  |  | i18n for English/Vietnamese language selection |
