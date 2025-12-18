@@ -68,7 +68,7 @@ Students must input minus points to every uncompleted feature in the SE column.
 |  | Account activation by email | \-0.25 |  |  | Email verification link sent on signup |
 |  | Social Sign-up/Sign-In | \-0.25 |  |  | Google OAuth integration |
 |  | Login to the website | \-0.25 |  |  | JWT-based authentication for admin/staff |
-|  | Authorize website features | \-0.25 |  |  | Role-based access control (Super Admin, Admin, Waiter, Kitchen Staff, Customer) |
+|  | Authorize website features | \-0.25 |  |  | Role-based access control (Admin, Waiter, Kitchen Staff, Customer) |
 |  | Forgot password by email | \-0.25 |  |  | Password reset via email link |
 | **4** | **Features for logged-in users (Customers)** |  |  |  |  |
 |  | Update user profile | \-0.25 |  |  | Customer can update name, preferences |
@@ -79,10 +79,9 @@ Students must input minus points to every uncompleted feature in the SE column.
 |  | › View order history | \-0.25 |  |  | List of past orders linked to user account |
 |  | › View item processing status | \-0.25 |  |  | Track individual item status within an order (Queued, Cooking, Ready) |
 |  | › Real-time Order Updates | 0.5 |  |  | WebSocket-based live order status updates for customers |
-| **5** | **Super Admin features** |  |  |  |  |
-|  | Create Admin accounts | \-0.25 |  |  | Super Admin creates restaurant Admin accounts |
+| **5** | **Administration features (Restaurant Admin)** |  |  |  |  |
+|  | Create Admin accounts | \-0.25 |  |  | Admin creates additional Admin accounts |
 |  | Manage Admin accounts | \-0.25 |  |  | View, edit, deactivate Admin accounts |
-| **6** | **Administration features (Restaurant Admin)** |  |  |  |  |
 |  | Update admin profile | \-0.25 |  |  | Restaurant admin profile management |
 |  | Create Waiter accounts | \-0.25 |  |  | Admin creates accounts for waiters |
 |  | Create Kitchen Staff accounts | \-0.25 |  |  | Admin creates accounts for kitchen staff |
@@ -187,7 +186,7 @@ Students must input minus points to every uncompleted feature in the SE column.
 - **Hosting:** Public hosting service
 
 ## Key User Flows
-1. **Restaurant Setup:** Super Admin creates Admin account → Admin login → Menu Creation → Table Setup → QR Generation
+1. **Restaurant Setup:** Admin account creation → Admin login → Menu Creation → Table Setup → QR Generation
 2. **Customer Registration:** Sign up → Email Verification → Login → Access order history
 3. **Customer Ordering (Dine-in):** Scan QR → View Menu → Add to Cart → Submit Items → Track Order → Add More Items → Request Bill → Payment
 4. **Waiter Order Acceptance:** Customer Places Order → Waiter Receives Notification → Waiter Reviews → Accept/Reject → Send to Kitchen
